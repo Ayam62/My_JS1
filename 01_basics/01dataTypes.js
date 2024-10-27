@@ -8,5 +8,5 @@ let state =null//empty for eg you have to send a n=tmperature but still the temp
 
 
 // to  view the type of any given value we have the syntax type of ...
-console.table([typeof "Ayam",typeof 19,typeof true,typeof null])
+console.table([typeof name,typeof 19,typeof true,typeof null])
 // null is of object type and undefined is of undefined type.
