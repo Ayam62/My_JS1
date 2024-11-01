@@ -12,4 +12,26 @@ const coding =["js","ruby","swift"]
 //     console.log(i)
 // }
 // coding.forEach(manipulateMe)
+// coding.forEach((item,index,arr)=>{
+//     console.log(item,index,arr)
+// })
 
+//object inside an array
+
+const myCoding=[
+    {
+        languageName: "Javascript",
+        languageFile: ".js"
+    },
+    {
+        languageName: "Python",
+        languageFile: ".py"
+    },
+    {
+        languageName: "C++",
+        languageFile: ".cpp"
+    }
+]
+myCoding.forEach((item,index,myCoding)=>{
+    console.log(item.languageName,item.languageFile,index,myCoding)
+})
