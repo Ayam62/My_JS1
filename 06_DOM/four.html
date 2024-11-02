@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color:aqua">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+       const listItem= document.createElement("li");
+       listItem.innerHTML=`${langName}`
+       const ulClass=document.querySelector(".language");
+       ulClass.appendChild(listItem)
+    }
+    addLanguage("python")
+    addLanguage("Ruby")
+    addLanguage("goLang")
+
+    //This process always goes through top of the tree, counts each number and then 
+</script>
+</html>
