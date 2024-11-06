@@ -1,0 +1,72 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML events</title>
+</head>
+<body style="background-color: black;">
+    <li>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl"  src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </li>
+</body>
+<script>
+    //type,timestamp,defaultPrevented
+    //target,toElement,srcElement,currentTarget
+    //clintX,clintY,screenX,screenY
+    //alt,ctrl,shiftkey,keyCode
+
+    // document.getElementById("images").addEventListener("click",(e)=>{// eventListener is more versatile and has more features than onClick function so it sould be used instead of onClick
+    //     console.log("Clicked inside ul")
+    // },false)// 3rd parameter of event listener is false which is default set into false
+    
+    // document.getElementById("owl").addEventListener("click",(e)=>{
+    //     console.log("Owl clicked ")
+    //     e.stopPropagation()// this prevents the propagation of bubble to the upper element
+
+    // },false)//First specifically owl is clicked and then only  the general images inside ul is clicked( This is becaause of event propagation which is also called as bubbling which moves from bottom to top or inside to outside)
+    
+    // // Note: If the 3rd parameter is set in true mode it is is capturing mode i.e goes from top to bottom  if false bottom to top
+
+
+
+
+    // // If i dont want the href to direct me to the givrn link i have to add a method in event listener i.e
+
+    // document.getElementById("google").addEventListener("click",(e)=>{
+    //     e.preventDefault();// This is the moethod 
+    //     e.stopPropagation();
+    //     console.log("Google clicked ")
+    // })
+
+    const images=document.querySelectorAll("#images")//gives node list because querySelectorAll is used
+
+    images.forEach((i)=>{
+        i.addEventListener("click",(e)=>{
+
+            if(e.target.tagName==="IMG"){
+            const li=e.target.parentNode//because we want to remove whole li not only images 
+            li.innerHTML="<img>"// Done
+            }
+        },false)
+    })
+
+
+    
+   
+</script>
+</html>
