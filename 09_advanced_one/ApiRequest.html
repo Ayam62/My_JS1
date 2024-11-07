@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    2. Properties
+xhr.readyState: Indicates the state of the request.
+
+0 - UNSENT: Request not initialized.
+1 - OPENED: Connection established.
+2 - HEADERS_RECEIVED: Request received.
+3 - LOADING: Processing request.
+4 - DONE: Request finished and response is ready.
+
+</body>
+<script>
+
+const url="https://avatars.githubusercontent.com/u/153174024?v=4"
+let div=document.createElement("div")
+
+    const requestURL="https://api.github.com/users/Ayam62"
+   const xhr= new  XMLHttpRequest()// in buit method
+   xhr.open("GET",requestURL)
+//    console.log(xhr.readyState)
+xhr.onreadystatechange=function(){
+    console.log(xhr.readyState)
+    if(xhr.readyState==4){
+        const data=JSON.parse(this.responseText)
+        // console.log(typeof data)
+       console.log(data.id)
+    }
+    div.innerHTML=`<p><img src="url"</p>`
+    document.querySelector("body").appendChild(div)
+}
+   xhr.send()
+</script>
+</html>

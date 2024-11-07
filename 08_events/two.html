@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1 >Chai aur Code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    
+    // const h1=document.querySelector("h1")
+    // function changeH1(){
+    //     h1.innerHTML="Best Internet series"
+    // }
+    // // function retainH1(){
+    // //     h1.innerHTML="Chai aur Code"
+    // // }
+   
+    // const change=setTimeout(changeH1,2000)
+    // // if you clicked stop then change the text
+
+    // const stop=document.querySelector("#stop")
+    // stop.addEventListener("click",function(e){// before 2 seconds you have to stop the change
+    //     clearTimeout(change)
+    //     console.log("stopped")
+    // })
+    let interval
+    const start=document.querySelector("#start")
+    const stop=document.querySelector("#stop")
+
+    const changeDate=function(){
+        const myDate=Date.now()
+        console.log(myDate.toLocaleString())
+    }
+    
+    
+    start.addEventListener("click",(e)=>{
+        interval=setInterval(changeDate,1000)
+        console.log("started")
+    })
+   
+
+
+    stop.addEventListener("click",(e)=>{
+        clearInterval(interval)
+        console.log("stopped")
+    })
+
+
+    
+   
+</script>
+</html>
